@@ -1,23 +1,18 @@
 package com.tplus.gwland.pce.repository;
 
+
 import java.util.List;
 
-import org.springframework.stereotype.Repository;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 import com.tplus.gwland.pce.domain.Place;
-@Repository
-public interface PlaceRepository {
+interface IPlaceRepository {
 
-	public int insert(Place p);
-
-	public int count();
-
-	public List<Place> list();
-
-	public Place select(String pceNum);
-
-	public int delete(Place p);
-
-	public int update(Place p);
-
+}
+public interface PlaceRepository extends JpaRepository<Place, Integer>, IPlaceRepository {
+	@Query("update Place set tel = :#{#place.tel} where pce_num = :#{#pceNum}")
+	public int update(@Param("place") Place t);
+	public List<Place> findByTitleAndContentid(String title, String contentid);
 }

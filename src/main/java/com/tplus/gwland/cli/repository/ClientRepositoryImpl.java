@@ -1,39 +1,24 @@
 package com.tplus.gwland.cli.repository;
 
-import java.util.List;
+
+
+import javax.persistence.EntityManager;
+
+import org.springframework.data.jpa.repository.support.QuerydslRepositorySupport;
+import org.springframework.stereotype.Repository;
+
 
 import com.tplus.gwland.cli.domain.Client;
 
-public class ClientRepositoryImpl implements ClientRepository{
 
-	@Override
-	public int insert(Client c) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public List<Client> list() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public int delete(Client c) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public int update(Client c) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public Client detail(String cliId) {
-		// TODO Auto-generated method stub
-		return null;
+@Repository
+public class ClientRepositoryImpl extends QuerydslRepositorySupport implements IClientRepository{
+	//private final JPAQueryFactory qf;
+	private final EntityManager em;
+	public ClientRepositoryImpl(EntityManager em) {
+		super(Client.class);
+		//this.qf = qf;
+		this.em = em;
 	}
 
 }

@@ -9,6 +9,10 @@ import lombok.Data;
 @Lazy
 public class CategoryDto {
 	private int catNum;
-	private String area;
-	private String tourType;
+	private String areacode;
+	private String cat1;
+	private String cat2;
+	private String cat3;
+	private String contentid;
+	private String contenttypeid;
 }

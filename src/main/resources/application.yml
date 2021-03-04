@@ -1,9 +1,13 @@
 spring:
     datasource:
-        url: jdbc:mariadb://mydatabase.c4h89kt7p5q1.ap-northeast-2.rds.amazonaws.com/myinstance
+        url: jdbc:mariadb://localhost/mariadb
         driverClassName: org.mariadb.jdbc.Driver
-        username: demoproject
-        password: demoproject
+        username: root
+        password: root
+        # url: jdbc:mariadb://mydatabase.c4h89kt7p5q1.ap-northeast-2.rds.amazonaws.com/myinstance
+        # driverClassName: org.mariadb.jdbc.Driver
+        # username: demoproject
+        # password: demodemo22
     jpa:
         database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
         hibernate:
