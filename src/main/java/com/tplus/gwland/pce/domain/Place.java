@@ -13,7 +13,7 @@ import lombok.Getter;
 @Entity @Getter
 public class Place {
 	@Id 
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="pce_num") private int pceNum;
 	@Column(name="addr1") private String addr1;
 	@Column(name="addr2") private String addr2;

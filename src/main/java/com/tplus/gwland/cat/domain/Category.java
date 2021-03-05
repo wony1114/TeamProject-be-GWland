@@ -13,7 +13,7 @@ import lombok.Getter;
 @NamedQuery(name = "Category.findByContentid", query = "select c from Category c where c.contentid like :contentid")
 public class Category {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="cat_num") private int catNum;
 	@Column(name="areacode") private String areacode;
 	@Column(name="cat1") private String cat1;

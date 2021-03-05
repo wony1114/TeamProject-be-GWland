@@ -37,4 +37,12 @@ public class PlaceServiceImpl extends AbstractService<Place> implements PlaceSer
 	@Override public List<Place> findAll() {
 		return repo.findAll();
 	}
+	@Override
+	public int update(String tel, int pceNum) {
+		return 0;
+	}
+	@Override
+	public List<Place> findByContentidAndTitle(String contentid, String title) {
+		return repo.findByContentidAndContentid(contentid, title);
+	}
 }
