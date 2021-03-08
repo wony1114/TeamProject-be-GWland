@@ -5,6 +5,8 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -16,8 +18,9 @@ import com.tplus.gwland.rcm.domain.Recom;
 
 @Entity
 public class Survey {
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Id @Column(name="svy_num")
-	private int svyNum;
+	private long svyNum;
 	
 	@ManyToOne
 	@JoinColumn(name="pce_num")

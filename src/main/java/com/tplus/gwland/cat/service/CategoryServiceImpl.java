@@ -16,28 +16,28 @@ import lombok.RequiredArgsConstructor;
 public class CategoryServiceImpl extends AbstractService<Category> implements CategoryService{
 	private final CategoryRepository repo;
 	
-	@Override public int save(Category t) {
+	@Override public long save(Category t) {
 		return (repo.save(t) != null) ? 1 : 0;
 	}
 
-	@Override public int delete(Category t) {
+	@Override public long delete(Category t) {
 		repo.delete(t);
 		return (getOne(t.getCatNum()) == null) ? 1 : 0;
 	}
 
-	@Override public int count() {
+	@Override public long count() {
 		return (int) repo.count();
 	}
 
-	@Override public Category getOne(int id) {
+	@Override public Category getOne(long id) {
 		return repo.getOne(id);
 	}
 
-	@Override public Optional<Category> findById(int id) {
+	@Override public Optional<Category> findById(long id) {
 		return repo.findById(id);
 	}
 
-	@Override public boolean existsById(int id) {
+	@Override public boolean existsById(long id) {
 		return repo.existsById(id);
 	}
 

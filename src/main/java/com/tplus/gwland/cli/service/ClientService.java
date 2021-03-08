@@ -4,6 +4,9 @@ import java.util.List;
 
 import com.tplus.gwland.cli.domain.Client;
 
-public interface ClientService  {
+public interface ClientService {
+
+	public List<Client> findByCliAge(String cliAge);
+	
 
 }

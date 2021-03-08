@@ -3,12 +3,8 @@ package com.tplus.gwland.cli.domain;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.Column;
+import javax.persistence.*;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.NamedQuery;
-import javax.persistence.OneToMany;
 
 import com.tplus.gwland.rev.domain.Review;
 import com.tplus.gwland.svy.domain.Survey;
@@ -17,14 +13,19 @@ import lombok.Getter;
 
 
 @Entity @Getter
+// @NamedQuery(
+//		name="Client.findByCliName",
+//		query = "select b from client b where b.cli_name like :cliName")
 
 public class Client{
-	@Id @Column(name="cli_num")private int cliNum;
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="cli_num")private long cliNum;
 	@Column(name="cli_id") private String cliId;
-	@Column(name="name") private String name;
-	@Column(name="gender") private String gender;
-	@Column(name="phone_num") private String phoneNum;
-	@Column(name="reg_date") private String regDate;
+	@Column(name="cli_name") private String cliName;
+	@Column(name="cli_gen") private String cliGen;
+	@Column(name="cli_mail") private String cliMail;
+	@Column(name="cli_age") private String cliAge;
+
 	
 	@OneToMany(mappedBy = "client")
     private List<Review> review = new ArrayList<>();

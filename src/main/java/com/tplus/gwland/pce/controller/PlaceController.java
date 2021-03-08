@@ -27,32 +27,32 @@ public class PlaceController extends AbstractController<Place> {
 	private final PlaceServiceImpl service;
 
 	@PostMapping("/save")
-	public ResponseEntity<Integer> save(@RequestBody Place t) {
+	public ResponseEntity<Long> save(@RequestBody Place t) {
 		return ResponseEntity.ok(service.save(t));
 	}
 
 	@DeleteMapping("/delete")
-	public ResponseEntity<Integer> delete(@RequestBody Place t) {
+	public ResponseEntity<Long> delete(@RequestBody Place t) {
 		return ResponseEntity.ok(service.delete(t));
 	}
 
 	@GetMapping("/count")
-	public ResponseEntity<Integer> count() {
+	public ResponseEntity<Long> count() {
 		return ResponseEntity.ok(service.count());
 	}
 
 	@GetMapping("/one/{id}")
-	public ResponseEntity<Place> getOne(@PathVariable int id) {
+	public ResponseEntity<Place> getOne(@PathVariable long id) {
 		return ResponseEntity.ok(service.getOne(id));
 	}
 
 	@GetMapping("/find/{id}")
-	public ResponseEntity<Optional<Place>> findById(@PathVariable int id) {
+	public ResponseEntity<Optional<Place>> findById(@PathVariable long id) {
 		return ResponseEntity.ok(service.findById(id));
 	}
 
 	@GetMapping("/exists/{id}")
-	public ResponseEntity<Boolean> existsById(@PathVariable int id) {
+	public ResponseEntity<Boolean> existsById(@PathVariable long id) {
 		return ResponseEntity.ok(service.existsById(id));
 	}
 

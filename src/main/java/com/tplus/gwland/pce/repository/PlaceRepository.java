@@ -11,9 +11,9 @@ import com.tplus.gwland.pce.domain.Place;
 interface IPlaceRepository {
 	public List<Place> findByTitle(String title);
 }
-public interface PlaceRepository extends JpaRepository<Place, Integer>, IPlaceRepository {
+public interface PlaceRepository extends JpaRepository<Place, Long>, IPlaceRepository {
 	@Query(value="update place p set p.tel = :tel "
 			+ " where p.pce_num = :pceNum", nativeQuery = true)
-	public int update(@Param("tel") String tel, @Param("pceNum") int pceNum);
+	public int update(@Param("tel") String tel, @Param("pceNum") long pceNum);
 	public List<Place> findByContentidAndContentid(String contentid, String title);
 }

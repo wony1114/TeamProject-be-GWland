@@ -19,8 +19,8 @@ import com.tplus.gwland.rcm.domain.Recom;
 @Entity 
 
 public class Review {
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Id @Column(name="rev_num")private int revNum;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Id @Column(name="rev_num")private long revNum;
 	
 	@OneToMany(mappedBy= "review")
 	private List<Recom> recom = new ArrayList<>();

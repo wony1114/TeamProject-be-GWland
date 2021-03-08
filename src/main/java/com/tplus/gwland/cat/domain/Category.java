@@ -14,7 +14,7 @@ import lombok.Getter;
 public class Category {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="cat_num") private int catNum;
+	@Column(name="cat_num") private long catNum;
 	@Column(name="areacode") private String areacode;
 	@Column(name="cat1") private String cat1;
 	@Column(name="cat2") private String cat2;

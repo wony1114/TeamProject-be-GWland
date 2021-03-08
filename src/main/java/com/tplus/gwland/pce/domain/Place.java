@@ -14,7 +14,7 @@ import lombok.Getter;
 public class Place {
 	@Id 
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="pce_num") private int pceNum;
+	@Column(name="pce_num") private long pceNum;
 	@Column(name="addr1") private String addr1;
 	@Column(name="addr2") private String addr2;
 	@Column(name="areacode") private String areacode;

@@ -9,6 +9,6 @@ import com.tplus.gwland.cat.domain.Category;
 interface ICategoryRepository {
 	public List<Category> findByContentid(String contentid);
 }
-public interface CategoryRepository extends JpaRepository<Category, Integer>, ICategoryRepository{
+public interface CategoryRepository extends JpaRepository<Category, Long>, ICategoryRepository{
 	
 }

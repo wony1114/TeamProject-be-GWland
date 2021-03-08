@@ -15,30 +15,30 @@ import lombok.RequiredArgsConstructor;
 public class PlaceServiceImpl extends AbstractService<Place> implements PlaceService{
 	private final PlaceRepository repo;
 	
-	@Override public int save(Place t) {
+	@Override public long save(Place t) {
 		return (repo.save(t) != null)? 1 : 0;
 	}
-	@Override public int delete(Place t) {
+	@Override public long delete(Place t) {
 		repo.delete(t);
 		return (getOne(t.getPceNum()) == null) ? 1 :0;
 	}
-	@Override public int count() {
+	@Override public long count() {
 		return (int) repo.count();
 	}
-	@Override public Place getOne(int id) {
+	@Override public Place getOne(long id) {
 		return repo.getOne(id);
 	}
-	@Override public Optional<Place> findById(int id) {
+	@Override public Optional<Place> findById(long id) {
 		return repo.findById(id);
 	}
-	@Override public boolean existsById(int id) {
+	@Override public boolean existsById(long id) {
 		return repo.existsById(id);
 	}
 	@Override public List<Place> findAll() {
 		return repo.findAll();
 	}
 	@Override
-	public int update(String tel, int pceNum) {
+	public int update(String tel, long pceNum) {
 		return 0;
 	}
 	@Override

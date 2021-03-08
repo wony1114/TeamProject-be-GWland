@@ -13,43 +13,48 @@ import lombok.RequiredArgsConstructor;
 
 @Service
 @RequiredArgsConstructor
-public class ClientServiceImpl extends AbstractService<Client> implements ClientService{
-		
+public class ClientServiceImpl extends AbstractService<Client> implements ClientService {
 	private final ClientRepository repo;
+
 	@Override
-	public int save(Client t) {
+	public long save(Client t) {
 		return (repo.save(t) != null) ? 1 : 0;
 	}
 
 	@Override
-	public int delete(Client t) {
+	public long delete(Client t) {
 		repo.delete(t);
 		return (getOne(t.getCliNum()) == null) ? 1 : 0;
 	}
 
 	@Override
-	public int count() {
+	public long count() {
 		return (int) repo.count();
 	}
 
 	@Override
-	public Client getOne(int id) {
+	public Client getOne(long id) {
 		return repo.getOne(id);
 	}
 
 	@Override
-	public Optional<Client> findById(int id) {
+	public Optional<Client> findById(long id) {
 		return repo.findById(id);
 	}
 
 	@Override
-	public boolean existsById(int id) {
+	public boolean existsById(long id) {
 		return repo.existsById(id);
 	}
 
 	@Override
 	public List<Client> findAll() {
 		return repo.findAll();
+	}
+
+	@Override
+	public List<Client> findByCliAge(String cliAge) {
+		return null;
 	}
 
 }
