@@ -1,4 +1,4 @@
-package com.tplus.gwland.cmm.domain;
+package com.tplus.gwland.cmm.utl;
 import java.io.File;
 import java.time.LocalDate;
 import java.time.LocalTime;

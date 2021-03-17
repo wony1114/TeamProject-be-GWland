@@ -57,4 +57,13 @@ public class ClientServiceImpl extends AbstractService<Client> implements Client
 		return null;
 	}
 
+	@Override
+	public long saveAll(List<Client> t) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+
+
+
 }

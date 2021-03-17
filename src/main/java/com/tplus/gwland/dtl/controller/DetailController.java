@@ -1,4 +1,4 @@
-package com.tplus.gwland.cat.controller;
+package com.tplus.gwland.dtl.controller;
 
 import java.util.List;
 import java.util.Optional;
@@ -13,26 +13,26 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.tplus.gwland.cat.domain.Category;
-import com.tplus.gwland.cat.service.CategoryServiceImpl;
 import com.tplus.gwland.cmm.controller.AbstractController;
+import com.tplus.gwland.dtl.domain.Detail;
+import com.tplus.gwland.dtl.service.DetailServiceImpl;
 
 import lombok.RequiredArgsConstructor;
 
 @RestController
 @RequiredArgsConstructor
 @CrossOrigin(origins = "*", allowedHeaders = "*")
-@RequestMapping("/category")
-public class CategoryController extends AbstractController<Category> {
-	private final CategoryServiceImpl service;
+@RequestMapping("/detail")
+public class DetailController extends AbstractController<Detail> {
+	private final DetailServiceImpl service;
 
 	@PostMapping("/save")
-	public ResponseEntity<Long> save(@RequestBody Category t) {
+	public ResponseEntity<Long> save(@RequestBody Detail t) {
 		return ResponseEntity.ok(service.save(t));
 	}
 
 	@DeleteMapping("/delete")
-	public ResponseEntity<Long> delete(@RequestBody Category t) {
+	public ResponseEntity<Long> delete(@RequestBody Detail t) {
 		return ResponseEntity.ok(service.delete(t));
 	}
 
@@ -42,12 +42,12 @@ public class CategoryController extends AbstractController<Category> {
 	}
 
 	@GetMapping("/one/{id}")
-	public ResponseEntity<Category> getOne(@PathVariable long id) {
+	public ResponseEntity<Detail> getOne(@PathVariable long id) {
 		return ResponseEntity.ok(service.getOne(id));
 	}
 
 	@GetMapping("/find/{id}")
-	public ResponseEntity<Optional<Category>> findById(@PathVariable long id) {
+	public ResponseEntity<Optional<Detail>> findById(@PathVariable long id) {
 		return ResponseEntity.ok(service.findById(id));
 	}
 
@@ -57,11 +57,11 @@ public class CategoryController extends AbstractController<Category> {
 	}
 
 	@GetMapping("/all")
-	public ResponseEntity<List<Category>> findAll() {
+	public ResponseEntity<List<Detail>> findAll() {
 		return ResponseEntity.ok(service.findAll());
 	}
 	@GetMapping("/contentid/{contentid}")
-	public ResponseEntity<List<Category>> findByContentid(String contentid) {
+	public ResponseEntity<List<Detail>> findByContentid(String contentid) {
 		return ResponseEntity.ok(service.findByContentid(contentid));
 	}
 

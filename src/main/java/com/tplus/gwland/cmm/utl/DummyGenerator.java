@@ -1,4 +1,4 @@
-package com.tplus.gwland.cmm.domain;
+package com.tplus.gwland.cmm.utl;
 
 import static java.util.stream.Collectors.*;
 import java.util.Arrays;

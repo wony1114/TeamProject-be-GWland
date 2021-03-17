@@ -1,4 +1,4 @@
-package com.tplus.gwland.cmm.domain;
+package com.tplus.gwland.cmm.utl;
 import java.util.ArrayList;
 import java.util.List;
 

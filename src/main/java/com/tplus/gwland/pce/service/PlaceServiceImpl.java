@@ -18,6 +18,10 @@ public class PlaceServiceImpl extends AbstractService<Place> implements PlaceSer
 	@Override public long save(Place t) {
 		return (repo.save(t) != null)? 1 : 0;
 	}
+	@Override
+	public long saveAll(List<Place> t) {
+		return (repo.saveAll(t) !=null) ? 1 : 0;
+	}
 	@Override public long delete(Place t) {
 		repo.delete(t);
 		return (getOne(t.getPceNum()) == null) ? 1 :0;

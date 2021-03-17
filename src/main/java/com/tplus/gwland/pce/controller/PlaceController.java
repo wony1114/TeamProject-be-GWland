@@ -30,6 +30,11 @@ public class PlaceController extends AbstractController<Place> {
 	public ResponseEntity<Long> save(@RequestBody Place t) {
 		return ResponseEntity.ok(service.save(t));
 	}
+	
+	@PostMapping("/saveAll")
+	public ResponseEntity<Long> saveAll(@RequestBody List<Place> t) {
+		return ResponseEntity.ok(service.saveAll(t));
+	}
 
 	@DeleteMapping("/delete")
 	public ResponseEntity<Long> delete(@RequestBody Place t) {

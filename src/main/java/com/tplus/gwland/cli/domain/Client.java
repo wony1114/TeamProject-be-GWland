@@ -1,7 +1,9 @@
 package com.tplus.gwland.cli.domain;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.*;
 
@@ -32,4 +34,5 @@ public class Client{
 	
 	@OneToMany(mappedBy = "client")
     private List<Survey> survey = new ArrayList<>();
+
 }

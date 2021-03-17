@@ -5,12 +5,13 @@ import java.util.List;
 
 import javax.persistence.*;
 
-import com.tplus.gwland.cat.domain.Category;
+import com.tplus.gwland.dtl.domain.Detail;
 import com.tplus.gwland.rev.domain.Review;
 
 import lombok.Getter;
+import lombok.ToString;
 
-@Entity @Getter
+@Entity @Getter @ToString
 public class Place {
 	@Id 
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -36,9 +37,8 @@ public class Place {
 	@Column(name="title") private String title;
 	@Column(name="zipcode") private String zipcode;
 	
-	@ManyToOne
-	@JoinColumn(name="cat_num")
-	private Category category;
+	@OneToMany(mappedBy = "place")
+	private List<Detail> detailList = new ArrayList<>();
 	
 	@OneToMany(mappedBy = "place")
 	private List<Review> reviewList = new ArrayList<>();
