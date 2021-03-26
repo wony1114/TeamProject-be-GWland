@@ -7,7 +7,6 @@ import com.tplus.gwland.pce.domain.Place;
 
 public abstract class AbstractService<T> {
 	public abstract long save(T t);
-	public abstract long saveAll(List<T> t);
 	public abstract long delete(T t);
 	public abstract long count();
 	public abstract T getOne(long id);

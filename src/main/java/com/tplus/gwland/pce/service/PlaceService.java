@@ -6,5 +6,6 @@ import com.tplus.gwland.pce.domain.Place;
 
 public interface PlaceService{
 	public List<Place> findByContentidAndTitle(String contentid, String title);
-	public int update (String tel, long pceNum);
+	public List<Place> findByContenttypeid(String contenttypeid);
+	int update(String tel, long pceNum);
 }

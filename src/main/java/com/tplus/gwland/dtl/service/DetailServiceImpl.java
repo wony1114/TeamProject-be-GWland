@@ -49,11 +49,4 @@ public class DetailServiceImpl extends AbstractService<Detail> implements Detail
 	public List<Detail> findByContentid(String contentid) {
 		return repo.findByContentid(contentid);
 	}
-
-	@Override
-	public long saveAll(List<Detail> t) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
 }

@@ -2,6 +2,7 @@ package com.tplus.gwland.pce.service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
@@ -13,12 +14,13 @@ import lombok.RequiredArgsConstructor;
 @Service
 @RequiredArgsConstructor
 public class PlaceServiceImpl extends AbstractService<Place> implements PlaceService{
+	
 	private final PlaceRepository repo;
 	
 	@Override public long save(Place t) {
 		return (repo.save(t) != null)? 1 : 0;
 	}
-	@Override
+
 	public long saveAll(List<Place> t) {
 		return (repo.saveAll(t) !=null) ? 1 : 0;
 	}
@@ -43,10 +45,19 @@ public class PlaceServiceImpl extends AbstractService<Place> implements PlaceSer
 	}
 	@Override
 	public int update(String tel, long pceNum) {
-		return 0;
+		return repo.update(tel, pceNum);
 	}
 	@Override
 	public List<Place> findByContentidAndTitle(String contentid, String title) {
-		return repo.findByContentidAndContentid(contentid, title);
+		return repo.findByContentidAndTitle(contentid, title);
+	}
+
+	@Override
+	public List<Place> findByContenttypeid(String contenttypeid) {
+		
+		return repo.findAll()
+				   .stream()
+				   .filter(place -> place.getContenttypeid().equals(contenttypeid))
+				   .collect(Collectors.toList());
 	}
 }
