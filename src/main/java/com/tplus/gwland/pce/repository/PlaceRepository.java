@@ -7,8 +7,11 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import com.tplus.gwland.pce.domain.Place;
+import com.tplus.gwland.pce.domain.PlaceDto;
 interface IPlaceRepository {
 	public List<Place> findByTitle(String title);
+	public List<Place> findByContentid(long contentid);
+	public List<PlaceDto> findByList();
 }
 public interface PlaceRepository extends JpaRepository<Place, Long>, IPlaceRepository {
 	@Query(value="update place p set p.tel = :tel "

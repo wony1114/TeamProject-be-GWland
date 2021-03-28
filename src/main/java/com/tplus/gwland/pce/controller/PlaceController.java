@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.tplus.gwland.cmm.controller.AbstractController;
 import com.tplus.gwland.pce.domain.Place;
+import com.tplus.gwland.pce.domain.PlaceDto;
 import com.tplus.gwland.pce.service.PlaceServiceImpl;
 
 import lombok.RequiredArgsConstructor;
@@ -72,5 +73,12 @@ public class PlaceController extends AbstractController<Place> {
 	public ResponseEntity<List<Place>> findByContenttypeid(@PathVariable String contenttypeid) {
 		return ResponseEntity.ok(service.findByContenttypeid(contenttypeid));
 	}
-	
+	@GetMapping("/dtl/{contentid}")
+	public ResponseEntity<List<Place>> findByContentid(@PathVariable long contentid) {
+		return ResponseEntity.ok(service.findByContentid(contentid));
+	}
+	@GetMapping("/list")
+	public ResponseEntity<List<PlaceDto>> findByList(){
+		return ResponseEntity.ok(service.findByList());
+	}
 }

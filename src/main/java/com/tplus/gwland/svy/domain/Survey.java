@@ -12,9 +12,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
-import com.tplus.gwland.cli.domain.Client;
 import com.tplus.gwland.pce.domain.Place;
 import com.tplus.gwland.rcm.domain.Recom;
+import com.tplus.gwland.usr.domian.User;
 
 @Entity
 public class Survey {
@@ -23,11 +23,11 @@ public class Survey {
 	private long svyNum;
 	
 	@ManyToOne
-	@JoinColumn(name="pce_num")
+	@JoinColumn(name="contentid")
 	private Place place;
 	@ManyToOne
-	@JoinColumn(name="cli_num")
-	private Client client;
+	@JoinColumn(name="num")
+	private User user;
 	
 	@OneToMany(mappedBy = "survey")
 	private List<Recom> RecomList = new ArrayList<>();
