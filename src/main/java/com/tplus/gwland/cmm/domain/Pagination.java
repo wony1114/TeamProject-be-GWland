@@ -1,4 +1,4 @@
-package com.tplus.gwland.cmm.utl;
+package com.tplus.gwland.cmm.domain;
 
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;

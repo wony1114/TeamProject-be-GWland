@@ -15,7 +15,6 @@ import com.tplus.gwland.pce.domain.Place;
 import com.tplus.gwland.pce.domain.PlaceDto;
 
 import static com.tplus.gwland.pce.domain.QPlace.place;
-import static com.tplus.gwland.dtl.domain.QDetail.detail;
 
 
 @Repository
@@ -41,12 +40,16 @@ public class PlaceRepositoryImpl extends QuerydslRepositorySupport implements IP
 	}
 	@Override
 	public List<PlaceDto> findByList() {
-		List<Tuple> res = qf.select(place.title,place.firstimage).from(place).fetch();
+		List<Tuple> res = qf.select(place.title,place.firstimage,  place.addr1, place.contentid, place.tel, place.overview).from(place).fetch();
 		List<PlaceDto> list = new ArrayList<>();
 		for(int i=0;i<res.size();i++) {
 			PlaceDto p = new PlaceDto();
 			p.setTitle(res.get(i).get(place.title));
 			p.setFirstimage(res.get(i).get(place.firstimage));
+			p.setAddr1(res.get(i).get(place.addr1));
+			p.setContentid(res.get(i).get(place.contentid));
+			p.setTel(res.get(i).get(place.tel));
+			p.setOverview(res.get(i).get(place.overview));
 			list.add(p);
 		}
 		return list;

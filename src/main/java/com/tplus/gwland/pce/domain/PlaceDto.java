@@ -10,13 +10,13 @@ import lombok.Data;
 @Data
 @Lazy
 public class PlaceDto {
+	private long contentid;
 	private String addr1;
 	private String addr2;
 	private String areacode;
 	private String cat1;
 	private String cat2;
 	private String cat3;
-	private String contentid;
 	private String contenttypeid;
 	private String createdtime;
 	private String firstimage;
@@ -30,4 +30,5 @@ public class PlaceDto {
 	private String tel;
 	private String title;
 	private String zipcode;
+	private String overview;
 }

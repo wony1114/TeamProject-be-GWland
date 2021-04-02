@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+import javax.transaction.Transactional;
+
 import org.springframework.stereotype.Service;
 
 import com.tplus.gwland.cmm.service.AbstractService;
@@ -70,6 +72,10 @@ public class PlaceServiceImpl extends AbstractService<Place> implements PlaceSer
 	public List<PlaceDto> findByList() {
 		return repo.findByList();
 	}
+	@Transactional
+    public void updateOverview(PlaceDto p){
+            repo.findById(p.getContentid()).get().updateDetail(p.getOverview());
+    }
 	
 	
 }

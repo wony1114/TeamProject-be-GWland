@@ -38,8 +38,6 @@ public class QPlace extends EntityPathBase<Place> {
 
     public final StringPath createdtime = createString("createdtime");
 
-    public final ListPath<com.tplus.gwland.dtl.domain.Detail, com.tplus.gwland.dtl.domain.QDetail> detailList = this.<com.tplus.gwland.dtl.domain.Detail, com.tplus.gwland.dtl.domain.QDetail>createList("detailList", com.tplus.gwland.dtl.domain.Detail.class, com.tplus.gwland.dtl.domain.QDetail.class, PathInits.DIRECT2);
-
     public final StringPath firstimage = createString("firstimage");
 
     public final StringPath firstimage2 = createString("firstimage2");
@@ -51,6 +49,8 @@ public class QPlace extends EntityPathBase<Place> {
     public final StringPath mlevel = createString("mlevel");
 
     public final StringPath modifiedtime = createString("modifiedtime");
+
+    public final StringPath overview = createString("overview");
 
     public final StringPath readcount = createString("readcount");
 
